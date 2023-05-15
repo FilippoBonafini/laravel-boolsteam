@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-})->name('HomePage');
+    return redirect('games');
+});
 
 Route::resource('games', GameController::class);
