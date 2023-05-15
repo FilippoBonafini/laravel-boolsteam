@@ -15,10 +15,10 @@ class GameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         // ordiniamo i vari giochi per prezzo
         $games = Game::orderBy('price', 'DESC')
-        ->get();
+            ->get();
 
         return view('games.index', compact('games'));
     }
@@ -84,7 +84,7 @@ class GameController extends Controller
     {
         $data = $request->validated();
         $game->update($data);
-        return redirect()->route('games.index', $Game->id);
+        return redirect()->route('games.index', $game->id);
     }
 
     /**
