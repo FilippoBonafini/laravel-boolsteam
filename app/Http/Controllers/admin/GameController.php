@@ -15,8 +15,12 @@ class GameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        // ordiniamo i vari giochi per prezzo
+        $games = Game::orderBy('price', 'DESC')
+        ->get();
+
+        return view('games.index', compact('games'));
     }
 
     /**
@@ -26,7 +30,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return view('games.create');
     }
 
     /**
