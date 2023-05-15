@@ -71,3 +71,4 @@ Questa repo template contiene una versione modificata del pacchetto `laravel/lar
 1. Aprire la repo su github
 2. Cliccare su `Settings`
 3. Spuntare la casella `Template repository`
+ 
