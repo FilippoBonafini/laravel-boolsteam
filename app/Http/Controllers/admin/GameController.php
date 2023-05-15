@@ -16,10 +16,10 @@ class GameController extends Controller
      */
     public function index()
     {
-        // ordiniamo i vari giochi per prezzo
+        // ORDINIAMO I GIOCHI IN BASE AL PREZZO
         $games = Game::orderBy('price', 'DESC')
             ->get();
-
+        //RESTITUIAMO LA VIEW 'games/index'
         return view('games.index', compact('games'));
     }
 

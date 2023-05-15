@@ -1,11 +1,16 @@
 @extends('layout.app')
 
 @section('page.main')
+    {{-- HEADER  --}}
     <div class="d-flex justify-content-between mb-5">
+        {{-- TITOLO DEL GIOCO  --}}
         <h1>{{ $game->title }}</h1>
+        {{-- INCLUDIAMO I BOTTONI  --}}
         @include('partials.editZone')
     </div>
+    {{-- /HEADER  --}}
 
+    {{-- CORPO DEL DETTAGLIO  --}}
     <div class="row">
         <div class="col-auto">
             <img class="my-img" src="{{ $game->cover }}" alt="">
@@ -19,6 +24,9 @@
             <p>{{ $game->developer }}</p>
         </div>
     </div>
+    {{-- CORPO DEL DETTAGLIO  --}}
+
+    {{-- INFORMAZIONI AGGIUNTIVE ("FOOTER") --}}
     <div class="row">
         <span>{{ $game->languages }}</span>
     </div>
@@ -30,4 +38,5 @@
         <h4>Release:</h4>
         <span>{{ $game->release_year }}</span>
     </div>
+    {{-- /INFORMAZIONI AGGIUNTIVE ("FOOTER") --}}
 @endsection
