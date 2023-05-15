@@ -57,10 +57,9 @@ class GameController extends Controller
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $games)
+    public function show(Game $game)
     {
-
-        return view('games.show', compact('games'));
+        return view('games.show', compact('game'));
     }
 
     /**
@@ -71,7 +70,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        return view('games.edit', compact('game'));
     }
 
     /**
