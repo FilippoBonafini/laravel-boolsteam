@@ -41,7 +41,14 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        //
+        //salvo dati in arrivo dal form
+        $data = $request->all();
+        $newGame = new Game();
+
+        //salvataggio in tabella
+        $newGame->fill($data);
+        $newGame->save();
+        return to_route('games.show');
     }
 
     /**
@@ -50,9 +57,10 @@ class GameController extends Controller
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show(Game $games)
     {
-        //
+
+        return view('games.show', compact('games'));
     }
 
     /**
