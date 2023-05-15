@@ -72,7 +72,7 @@ class GameController extends Controller
     public function update(UpdateGameRequest $request, Game $game)
     {
         $data = $request->validated();
-        $game->update($data);
+        $game->update($game);
         return redirect()->route('games.index', $Game->id);
     }
 
