@@ -11,7 +11,7 @@
     {{-- /BOTTONE DI CANCELLAZIONE DEL RECORD  --}}
 
     {{-- BOTTONE DI MODIFICA DEL RECORD  --}}
-    <a href="/" class="btn btn-warning btn-sm d-inline-block">
+    <a href="{{ route('games.edit', $game->id)}}" class="btn btn-warning btn-sm d-inline-block">
         {{-- INCLUDIAMO L'ICONA DELLA MATITA  --}}
         @include('partials.svg.edit')
     </a>
