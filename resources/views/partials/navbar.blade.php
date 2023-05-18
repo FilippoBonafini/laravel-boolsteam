@@ -7,7 +7,7 @@
 
         {{-- PULSANTE PER AGGIUNGERE UN RECORD  --}}
         <div class="m-a text-light">
-            <a href="/">
+            <a href="{{route('games.create')}}">
                 {{-- INCLUDIAMO L'ICONA DEL PIU' --}}
                 @include('partials.svg.add')
             </a>

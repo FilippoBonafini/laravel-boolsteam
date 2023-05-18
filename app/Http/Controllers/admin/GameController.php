@@ -43,7 +43,13 @@ class GameController extends Controller
     {
         //salvo dati in arrivo dal form
         $data = $request->all();
+
         $newGame = new Game();
+        $newGame->GameName = $data['GameName'];
+        $newGame->GameVote = $data['GameVote'];
+        $newGame->save();
+
+
 
         //salvataggio in tabella
         $newGame->fill($data);
