@@ -14,7 +14,7 @@ class UpdateGameRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,12 +25,17 @@ class UpdateGameRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => [
-                'required',
-                'string',
-                'max:100',
-                Rule::unique('games')->ignore($this->game)
-            ],
+            'title' => 'required|string',
+            'genres' => 'required',
+            'release_year' => 'required',
+            'description' => 'nullable',
+            'developer' => 'required|string',
+            'platforms' => 'required',
+            "crossplay" => "required|boolean",
+            "languages" => "required",
+            "online" => "required|boolean",
+            "price" => "required|numeric",
+            "cover" => "required|url"
         ];
     }
 }

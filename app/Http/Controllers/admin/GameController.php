@@ -44,12 +44,18 @@ class GameController extends Controller
         $data = $request->validated();
         //salvo dati in arrivo dal form
         $data = $request->all();
+
         $newGame = new Game();
+        // $newGame->GameName = $data['GameName'];
+        // $newGame->GameVote = $data['GameVote'];
+        // $newGame->save();
+
+
 
         //salvataggio in tabella
         $newGame->fill($data);
         $newGame->save();
-        return to_route('games.show');
+        return to_route('games.index');
     }
 
     /**
@@ -86,7 +92,8 @@ class GameController extends Controller
     {
         $data = $request->validated();
         $game->update($data);
-        return redirect()->route('games.index', $game->id);
+        $game->save();
+        return redirect()->route('games.index');
     }
 
     /**
@@ -98,6 +105,6 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
-        return redirect()->route('game.index');
+        return redirect()->route('games.index');
     }
 }
