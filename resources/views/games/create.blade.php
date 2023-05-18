@@ -62,15 +62,29 @@
                             <input type="number" class="form-control" name="price" value="{{ trim(old('price')) }}">
                         </p>
                         <div class="form-group">
-                            <label for="crossplay">Cross Play</label>
-                            <input type="checkbox" id="crossplay" name="crossplay" value="1"
-                                @if (old('crossplay')) checked @endif>
+                            <label for="crossplay">Cross Play</label><br>
+                            <div class="d-flex">
+                                <input type="radio" id="crossplay_true" name="crossplay" value="1"
+                                    @if (old('crossplay') === '1') checked @endif>
+                                <label for="crossplay_true">True</label><br>
+                                <input type="radio" id="crossplay_false" name="crossplay" value='0'
+                                    @if (old('crossplay') === '0') checked @endif>
+                                <label for="crossplay_false">False</label>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="online">Online</label>
-                            <input type="checkbox" id="online" name="online" value="1"
-                                @if (old('online')) checked @endif>
+                            <label for="online">Online</label><br>
+                            <div class="d-flex">
+                                <input type="radio" id="online_true" name="online" value="1"
+                                    @if (old('online') === '1') checked @endif>
+                                <label for="online_true">True</label><br>
+                                <input type="radio" id="online_false" name="online" value='0'
+                                    @if (old('online') === '0') checked @endif>
+                                <label for="online_false">False</label>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
