@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateGameRequest extends FormRequest
 {
@@ -24,7 +25,12 @@ class UpdateGameRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => [
+                'required',
+                'string',
+                'max:100',
+                Rule::unique('games')->ignore($this->game)
+            ],
         ];
     }
 }
