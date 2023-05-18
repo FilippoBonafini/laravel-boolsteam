@@ -93,7 +93,7 @@ class GameController extends Controller
         $data = $request->validated();
         $game->update($data);
         $game->save();
-        return redirect()->route('games.index', $game->id);
+        return redirect()->route('games.index');
     }
 
     /**
