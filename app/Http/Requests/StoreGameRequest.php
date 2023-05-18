@@ -13,7 +13,7 @@ class StoreGameRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,12 +24,12 @@ class StoreGameRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required|string',
-            'genres'=> 'required',
-            'release_year'=>'required',
-            'description'=>'nullable',
-            'developer'=>'required|string',
-            'platforms'=> 'required',
+            'title' => 'required|string',
+            'genres' => 'required',
+            'release_year' => 'required',
+            'description' => 'nullable',
+            'developer' => 'required|string',
+            'platforms' => 'required',
             "crossplay" => "required|boolean",
             "languages" => "required",
             "online" => "required|boolean",
