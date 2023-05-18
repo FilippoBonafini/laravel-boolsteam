@@ -41,6 +41,8 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
+
+        $data = $request->validated();
         //salvo dati in arrivo dal form
         $data = $request->all();
 
@@ -102,6 +104,6 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
-        return redirect()->route('game.index');
+        return redirect()->route('games.index');
     }
 }

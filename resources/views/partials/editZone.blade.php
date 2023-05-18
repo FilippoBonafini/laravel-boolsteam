@@ -1,6 +1,8 @@
 <div class="d-flex gap-2 align-items-center">
     {{-- BOTTONE DI CANCELLAZIONE DEL RECORD  --}}
-    <form>
+    <form action="{{ route('games.destroy', $game->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
         <button type="submit" class="btn btn-danger btn-sm">
             {{-- INCLUDIAMO L'ICONA DEL CESTINO  --}}
             @include('partials.svg.delete')

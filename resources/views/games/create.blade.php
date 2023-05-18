@@ -1,6 +1,15 @@
 @extends('layout.app')
 
 @section('page.main')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('games.store') }}" method="POST" class="container" id="save-form">
         @csrf
         <div class="pt-5 row justify-content-center">
