@@ -1,7 +1,15 @@
-@extends('layout.app')
+@extends('layouts.auth')
 
+@section('content')
+    {{-- BOTTONE PER AGGIUNGERE GIOCO ALL'ELNCO  --}}
+    <div class=" m-a text-light d-flex justify-content-end">
+        <a href="{{ route('admin.games.create') }}">
+            {{-- INCLUDIAMO L'ICONA DEL PIU' --}}
 
-@section('page.main')
+            @include('partials.svg.add')
+        </a>
+    </div>
+    {{-- /BOTTONE PER AGGIUNGERE GIOCO ALL'ELNCO  --}}
     {{-- TABELLA DOVE VENGONO VISUALIZZATI I CAMPI  --}}
     <table class="table">
         {{-- HEADER DELLA TABELLA  --}}
@@ -26,7 +34,7 @@
                     <td class="align-middle d-flex justify-content-end align-items-center gap-3">
                         {{-- INCLUDIAMO I BOTTONI  --}}
                         @include('partials.editZone')
-                        <a href="{{ route('games.show', $game->id) }}">
+                        <a href="{{ route('admin.games.show', $game->id) }}">
                             @include('partials.svg.show')
                         </a>
                     </td>

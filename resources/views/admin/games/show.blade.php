@@ -1,6 +1,6 @@
-@extends('layout.app')
+@extends('layouts.auth')
 
-@section('page.main')
+@section('content')
     {{-- HEADER  --}}
     <div class="d-flex justify-content-between mb-5">
         {{-- TITOLO DEL GIOCO  --}}
