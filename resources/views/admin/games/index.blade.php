@@ -26,7 +26,7 @@
                     <td class="align-middle d-flex justify-content-end align-items-center gap-3">
                         {{-- INCLUDIAMO I BOTTONI  --}}
                         @include('partials.editZone')
-                        <a href="{{ route('games.show', $game->id) }}">
+                        <a href="{{ route('admin.games.show', $game->id) }}">
                             @include('partials.svg.show')
                         </a>
                     </td>
