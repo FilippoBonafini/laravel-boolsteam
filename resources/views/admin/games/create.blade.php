@@ -1,6 +1,6 @@
-@extends('layout.app')
+@extends('layouts.auth')
 
-@section('page.main')
+@section('content')
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

@@ -1,20 +1,20 @@
-@extends('layout.app')
+@extends('layouts.auth')
 
-@section('page.main')
+@section('content')
 
     {{-- errori --}}
     @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
     {{-- errori --}}
 
-    <form action="{{ route('admin.games.update',$game->id) }}" method="POST" class="container" id="save-form">
+    <form action="{{ route('admin.games.update', $game->id) }}" method="POST" class="container" id="save-form">
         {{-- token --}}
         @csrf
         {{-- metodo put patch --}}
@@ -24,7 +24,8 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header d-flex gap-3 align-items-center justify-content-between">
-                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $game->title) }}">
+                        <input type="text" class="form-control" id="title" name="title"
+                            value="{{ old('title', $game->title) }}">
                         <a class="btn btn-success btn-sm"
                             onclick="event.preventDefault();
                         document.getElementById('save-form').submit();">
@@ -62,14 +63,16 @@
                         </p>
                         <h5>Image Link:</h5>
                         <p>
-                            <input type="text" class="form-control" name="cover" value="{{ trim(old('cover', $game->cover)) }}">
+                            <input type="text" class="form-control" name="cover"
+                                value="{{ trim(old('cover', $game->cover)) }}">
                         </p>
 
                         <h5>Price</h5>
                         <p>
-                            <input type="number" class="form-control" name="price" value="{{ trim(old('price', $game->price)) }}">
+                            <input type="number" class="form-control" name="price"
+                                value="{{ trim(old('price', $game->price)) }}">
                         </p>
-                        
+
                         <div class="form-group">
                             <label for="crossplay">Cross Play</label><br>
                             <div class="d-flex">
