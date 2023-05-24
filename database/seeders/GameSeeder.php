@@ -32,7 +32,7 @@ class GameSeeder extends Seeder
             // $newGame->languages = implode(',', $game['languages']);
             $newGame->online = $game['online'];
             $newGame->price = $game['price'];
-            $newGame->cover = $game['cover'];
+            // $newGame->cover = $game['cover'];
             $newGame->save();
         }
     }

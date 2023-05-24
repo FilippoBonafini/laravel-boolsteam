@@ -34,7 +34,8 @@ class StoreGameRequest extends FormRequest
             // "languages" => "required",
             "online" => "required|boolean",
             "price" => "required|numeric",
-            "cover" => "required|url"
+            // "cover" => "required|url"
+            'image' => 'nullable|image|max:2048',
         ];
     }
 }

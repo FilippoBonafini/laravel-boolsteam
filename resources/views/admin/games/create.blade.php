@@ -10,13 +10,15 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('admin.games.store') }}" method="POST" class="container" id="save-form">
+    <form action="{{ route('admin.games.store') }}" method="POST" class="container" id="save-form"
+        enctype="multipart/form-data">
         @csrf
         <div class="pt-5 row justify-content-center">
             <div class="col">
                 <div class="card">
                     <div class="card-header d-flex gap-3 align-items-center justify-content-between">
-                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                        <input type="text" class="form-control" id="title" name="title"
+                            value="{{ old('title') }}">
                         <a class="btn btn-success btn-sm"
                             onclick="event.preventDefault();
                         document.getElementById('save-form').submit();">
@@ -52,10 +54,10 @@
                             <input type="text" class="form-control" name="languages"
                                 value="{{ trim(old('languages')) }}">
                         </p> --}}
-                        <h5>Image Link:</h5>
+                        {{-- <h5>Image Link:</h5>
                         <p>
                             <input type="text" class="form-control" name="cover" value="{{ trim(old('cover')) }}">
-                        </p>
+                        </p> --}}
 
                         <h5>Price</h5>
                         <p>
@@ -83,6 +85,15 @@
                                     @if (old('online') === '0') checked @endif>
                                 <label for="online_false">False</label>
                             </div>
+                        </div>
+
+                        <h5 class="pt-3">Immagine:</h5>
+                        <input type="file" class="form-control" id="image" name="image">
+
+                        {{-- anteprima immagine upload  --}}
+
+                        <div class="preview pt-3">
+                            <img id="file-image-preview">
                         </div>
 
                     </div>
