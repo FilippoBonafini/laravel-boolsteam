@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['slug'];
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class, 'game_genre');
+    }
 }
