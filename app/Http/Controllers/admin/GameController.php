@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
 use App\Models\Game;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -50,10 +51,13 @@ class GameController extends Controller
         // $newGame->GameVote = $data['GameVote'];
         // $newGame->save();
 
+        $newGame->fill($data);
 
+        if (isset($data['image'])) {
+            $newGame->image = Storage::put('uploads', $data['image']);
+        }
 
         //salvataggio in tabella
-        $newGame->fill($data);
         $newGame->save();
         return to_route('admin.games.index');
     }
@@ -88,10 +92,27 @@ class GameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateGameRequest $request, Game $game)
-    
+
     {
         $data = $request->validated();
-        $game->update($data);
+
+        if (empty($data['set_image'])) {
+            if ($game->image) {
+                Storage::delete($game->image);
+                $game->image = null;
+            }
+        } else {
+            if (isset($data['image'])) {
+
+                if ($game->image) {
+                    Storage::delete($game->image);
+                }
+
+                $game->image = Storage::put('uploads', $data['image']);
+            }
+        }
+
+        // $game->update($data);
         $game->save();
         return redirect()->route('admin.games.index');
     }
@@ -104,7 +125,10 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
+        if ($game->image) {
+            Storage::delete($game->image);
+        }
         $game->delete();
-        return redirect()->route('admin.games.index');
+        return redirect()->route('admin.games.index')->with('message', "'" . $game->title . "'" . ' eliminato con successo');
     }
 }
