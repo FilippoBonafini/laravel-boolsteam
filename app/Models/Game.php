@@ -10,5 +10,10 @@ class Game extends Model
 {
     use HasFactory;
 
+    public function Developer()
+    {
+        return $this->belongsTo(Developer::class);
+    }
+
     protected $guarded = [];
 }
