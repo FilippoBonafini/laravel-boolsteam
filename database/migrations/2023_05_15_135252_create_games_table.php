@@ -19,13 +19,13 @@ return new class extends Migration
             // CREIAMO I VARI CAMPI DELLA TABELLA
             $table->id();
             $table->string('title', 100);
-            $table->string('genres');
+            // $table->string('genres');
             $table->integer('release_year');
             $table->text('description');
-            $table->string('developer', 100);
-            $table->string('platforms');
+            // $table->string('developer', 100);
+            // $table->string('platforms');
             $table->boolean('crossplay')->default(false);
-            $table->string('languages', 100);
+            // $table->string('languages', 100);
             $table->boolean('online')->default(false);
             $table->float('price', 6, 2);
             $table->text('cover');

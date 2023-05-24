@@ -28,21 +28,21 @@
                         <p>
                             <textarea style="resize: none;" rows="5" class="form-control" id="description" name="description">{{ trim(old('description')) }}</textarea>
                         </p>
-                        <h5>Genres:</h5>
+                        {{-- <h5>Genres:</h5>
                         <p>
                             <textarea style="resize: none;" rows="5" class="form-control" id="description" name="genres">{{ trim(old('genres')) }}</textarea>
-                        </p>
+                        </p> --}}
                         <h5>Release year:</h5>
                         <p>
                             <input type="number" class="form-control" name="release_year"
                                 value="{{ trim(old('release_year')) }}">
                         </p>
-                        <h5>Developer:</h5>
+                        {{-- <h5>Developer:</h5>
                         <p>
                             <input type="text" class="form-control" name="developer"
                                 value="{{ trim(old('developer')) }}">
-                        </p>
-                        <h5>Platform:</h5>
+                        </p> --}}
+                        {{-- <h5>Platform:</h5>
                         <p>
                             <input type="text" class="form-control" name="platforms"
                                 value="{{ trim(old('platforms')) }}">
@@ -51,7 +51,7 @@
                         <p>
                             <input type="text" class="form-control" name="languages"
                                 value="{{ trim(old('languages')) }}">
-                        </p>
+                        </p> --}}
                         <h5>Image Link:</h5>
                         <p>
                             <input type="text" class="form-control" name="cover" value="{{ trim(old('cover')) }}">
