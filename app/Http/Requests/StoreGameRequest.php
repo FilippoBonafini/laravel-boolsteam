@@ -25,13 +25,13 @@ class StoreGameRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'genres' => 'required',
+            // 'genres' => 'required',
             'release_year' => 'required',
             'description' => 'nullable',
-            'developer' => 'required|string',
-            'platforms' => 'required',
+            // 'developer' => 'required|string',
+            // 'platforms' => 'required',
             "crossplay" => "required|boolean",
-            "languages" => "required",
+            // "languages" => "required",
             "online" => "required|boolean",
             "price" => "required|numeric",
             "cover" => "required|url"

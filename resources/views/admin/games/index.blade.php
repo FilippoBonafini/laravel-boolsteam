@@ -17,7 +17,7 @@
             <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Price</th>
-                <th scope="col">Company</th>
+                {{-- <th scope="col">Company</th> --}}
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
                 <tr>
                     <td class=" align-middle">{{ $game->title }}</td>
                     <td class=" align-middle">{{ $game->price }}</td>
-                    <td class="align-middle">{{ $game->developer }}</td>
+                    {{-- <td class="align-middle">{{ $game->developer }}</td> --}}
                     <td class="align-middle d-flex justify-content-end align-items-center gap-3">
                         {{-- INCLUDIAMO I BOTTONI  --}}
                         @include('partials.editZone')

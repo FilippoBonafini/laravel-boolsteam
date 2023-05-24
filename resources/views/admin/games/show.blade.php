@@ -18,18 +18,18 @@
         <div class="col">
             <h3>Description</h3>
             <p>{{ $game->description }}</p>
-            <h3>Genres</h3>
+            {{-- <h3>Genres</h3>
             <p>{{ $game->genres }}</p>
             <h3>Developer</h3>
-            <p>{{ $game->developer }}</p>
+            <p>{{ $game->developer }}</p> --}}
         </div>
     </div>
     {{-- CORPO DEL DETTAGLIO  --}}
 
     {{-- INFORMAZIONI AGGIUNTIVE ("FOOTER") --}}
-    <div class="row">
+    {{-- <div class="row">
         <span>{{ $game->languages }}</span>
-    </div>
+    </div> --}}
     <div class="row mt-5">
         <h4>Price:</h4>
         <span>{{ $game->price }}$</span>
