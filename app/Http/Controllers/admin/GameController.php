@@ -57,15 +57,17 @@ class GameController extends Controller
         $newGame->fill($data);
 
         //applicazione dello sconto al prezzo
+        $prezzoScontato = 0;
         if (isset($data['sconto'])) {
             // Calcola il prezzo scontato e assegna il valore a $prezzoScontato
-            $prezzoScontato = $data['price'] - ($data['price'] * ($data['sconto'] / 100));
+            $prezzoScontato = floor($data['price'] - ($data['price'] * ($data['sconto'] / 100))) + 0.99;
+            
             $newGame->discounted_price = $prezzoScontato;
         } else {
             // Nessuno sconto applicato
             $newGame->discounted_price = null;
         }
-
+        dd($prezzoScontato);
         if (isset($data['image'])) {
             $newGame->image = Storage::put('uploads', $data['image']);
         }
