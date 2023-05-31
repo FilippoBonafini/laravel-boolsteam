@@ -64,7 +64,9 @@
                             <input type="number" class="form-control" name="price" value="{{ trim(old('price')) }}">
                         </p>
                         <p>
-                            <input type="number" class="form-control" min="0" max="100" step="1" name="sconto" value="{{ trim(old('sconto')) }}" placeholder="Inserisci lo sconto (opzionale)">
+                            <input type="number" class="form-control" min="0" max="100" step="1"
+                                name="sconto" value="{{ trim(old('sconto')) }}"
+                                placeholder="Inserisci lo sconto (opzionale)">
                         </p>
                         <div class="form-group">
                             <label for="crossplay">Cross Play</label><br>
@@ -92,9 +94,19 @@
 
                         <h5 class="pt-3">Immagine:</h5>
                         <input type="file" class="form-control" id="image" name="image">
-                        
+
                         <h5 class="pt-3">Poster Image:</h5>
                         <input type="file" class="form-control" id="poster_image" name="poster_image">
+
+                        <h5 class="pt-3">Scegli Categorie: </h5>
+                        <div class="btn-group d-flex flex-wrap my-2" role="group">
+
+                            @foreach ($genres as $genre)
+                                <input type="checkbox" class="btn-check my-2" id="{{$genre->id}}" autocomplete="off" name="genre[]" value="{{$genre->id}}">
+                                <label class="btn btn-outline-primary" for="{{$genre->id}}">{{ $genre->name }}</label>
+                            @endforeach
+                        </div>
+
 
                         {{-- anteprima immagine upload  --}}
                         {{-- image --}}

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
 use App\Models\Game;
+use App\Models\Genre;
 use App\Models\Platform;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,6 +23,8 @@ class GameController extends Controller
         $games = Game::orderBy('price', 'DESC')
             ->get();
         $platforms = Platform::all();
+        
+        
         //RESTITUIAMO LA VIEW 'games/index'
         return view('admin.games.index', compact('games', 'platforms'));
     }
@@ -33,8 +36,9 @@ class GameController extends Controller
      */
     public function create()
     {
+        $genres = Genre::all();
         $platforms = Platform::all();
-        return view('admin.games.create', compact('platforms'));
+        return view('admin.games.create', compact('platforms', 'genres'));
     }
 
     /**
@@ -76,12 +80,21 @@ class GameController extends Controller
         if (isset($data['poster_image'])) {
             $newGame->poster_image = Storage::put('uploads', $data['poster_image']);
         }
+
+        
         //salvataggio in tabella
         $newGame->save();
+
+        if (isset($data['genre'])) {
+            $newGame->genres()->sync($data['genre']);
+        }
+        
 
         if (isset($data['platforms'])) {
             $newGame->tags()->sync($data['platforms']);
         }
+        
+        
         return to_route('admin.games.index');
     }
 
@@ -104,8 +117,9 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
+        $genres = Genre::all();
         $platforms = Platform::all();
-        return view('admin.games.edit', compact('game'));
+        return view('admin.games.edit', compact('game', 'genres'));
     }
 
     /**

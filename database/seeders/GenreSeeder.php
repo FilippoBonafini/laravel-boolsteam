@@ -18,6 +18,11 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
+
+        $genres = [
+            'Action', 'Adventure', 'Open-world', 'Role-playing', 'Sandbox', 'Survival', 'Platformer', 'Action-adventure', 'First-person shooter', 'Online', 'Strategy','Sports','Racing','Simulation','Puzzle','Stealth','Horror','Mystery','Fantasy', 'Co-op'
+        ];
+
         //disattiva relazioni
         Schema::disableForeignKeyConstraints();
 
@@ -27,16 +32,16 @@ class GenreSeeder extends Seeder
         //riattiva relazioni
         Schema::enableForeignKeyConstraints();
 
-        $genres = [];
-        $data = config('games');
+        //$genres = [];
+        //$data = config('games');
 
-        foreach ($data as $game) {
-            foreach ($game['genres'] as $genre) {
-                if (!in_array($genre, $genres)) {
-                    array_push($genres, $genre);
-                }
-            }
-        }
+        //foreach ($data as $game) {
+        //    foreach ($game['genres'] as $genre) {
+        //        if (!in_array($genre, $genres)) {
+        //            array_push($genres, $genre);
+        //        }
+        //    }
+        //}
         foreach ($genres as $genre) {
 
             $new_genre = new Genre();
