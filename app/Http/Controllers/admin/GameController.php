@@ -53,10 +53,15 @@ class GameController extends Controller
 
         $newGame->fill($data);
 
+        // img
         if (isset($data['image'])) {
             $newGame->image = Storage::put('uploads', $data['image']);
         }
 
+        // poster img
+        if (isset($data['poster_image'])) {
+            $newGame->poster_image = Storage::put('uploads', $data['poster_image']);
+        }
         //salvataggio in tabella
         $newGame->save();
         return to_route('admin.games.index');
@@ -96,6 +101,7 @@ class GameController extends Controller
     {
         $data = $request->validated();
 
+        // img
         if (empty($data['set_image'])) {
             if ($game->image) {
                 Storage::delete($game->image);
@@ -110,6 +116,26 @@ class GameController extends Controller
 
                 $game->image = Storage::put('uploads', $data['image']);
             }
+        }
+
+        // poster img
+        // if (empty($data['set_image'])) {
+        //     if ($game->poster_image) {
+        //         Storage::delete($game->poster_image);
+        //         $game->poster_image = null;
+        //     }
+        // } else {
+        //     if (isset($data['poster_image'])) {
+
+        //         if ($game->poster_image) {
+        //             Storage::delete($game->poster_image);
+        //         }
+
+        //         $game->poster_image = Storage::put('uploads', $data['poster_image']);
+        //     }
+        // }
+        if (isset($data['poster_image'])) {
+            $game->poster_image = Storage::put('uploads', $data['poster_image']);
         }
 
         // $game->update($data);
@@ -127,6 +153,9 @@ class GameController extends Controller
     {
         if ($game->image) {
             Storage::delete($game->image);
+        }
+        if ($game->poster_image) {
+            Storage::delete($game->poster_image);
         }
         $game->delete();
         return redirect()->route('admin.games.index')->with('message', "'" . $game->title . "'" . ' eliminato con successo');

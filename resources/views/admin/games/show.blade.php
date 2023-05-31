@@ -21,6 +21,12 @@
                     alt="{{ $game->title }}">
             </div>
         @endif
+        
+        <div>
+            <img id="file-poster-image-preview" class="pt-3 d-block" src="{{ asset('storage/' . $game->poster_image) }}"
+            alt="{{ $game->title }}">
+        </div>
+
         <div class="col">
             <h3>Description</h3>
             <p>{{ $game->description }}</p>

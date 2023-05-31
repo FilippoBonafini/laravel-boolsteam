@@ -103,12 +103,22 @@
                             <label for="set_image" class="form-check-label">Immagine</label>
                         </div>
 
+                        {{-- img --}}
                         <div id="image_input_container">
                             <h5 class="mt-3">Immagine:</h5>
                             <input type="file" class="form-control" id="image" name="image">
                             <div class="preview pt-3">
                                 <img class="d-block" id="file-image-preview"
                                     @if ($game->image) src="{{ asset('storage/' . $game->image) }}" alt="{{ $game->title }}" @endif>
+                            </div>
+                        </div>
+                        {{-- poster img --}}
+                        <div id="poster_image_input_container">
+                            <h5 class="mt-3">Poster Immagine:</h5>
+                            <input type="file" class="form-control" id="poster_image" name="poster_image">
+                            <div class="preview pt-3">
+                                <img class="d-block" id="file-image-preview"
+                                    @if ($game->poster_image) src="{{ asset('storage/' . $game->poster_image) }}" alt="{{ $game->title }}" @endif>
                             </div>
                         </div>
                     </div>

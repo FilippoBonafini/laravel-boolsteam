@@ -38,6 +38,7 @@ class UpdateGameRequest extends FormRequest
             // "cover" => "required|url"
             'set_image' => 'boolean',
             'image' => 'nullable|image|max:2048',
+            'poster_image' => 'nullable|image|max:2048',
         ];
     }
 }
