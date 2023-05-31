@@ -62,13 +62,14 @@ posterImageInput.addEventListener('change', showPreviewPoster);
 // FUNZIONE PER MOSTRARE O NASCONDERE LA GESTIONE DELLE IMMAGINI 
 function showImageBoxPoster() {
     const imagePosterBox = document.getElementById('poster_image_input_container');
-    if (setImageInput.checked)
+    if (setPosterImageInput.checked)
     imagePosterBox.classList.remove('d-none');
     else {
         imagePosterBox.classList.add('d-none');
     }
-
 }
+
+
 const setPosterImageInput = document.getElementById('set_poster_image');
 const imagePosterBox = document.getElementById('poster_image_input_container');
 

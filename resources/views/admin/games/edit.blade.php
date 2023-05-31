@@ -119,7 +119,7 @@
                         <div class="form-check form-switch pt-4">
                             <input type="checkbox" name="set_poster_image" value="1" class="form-check-input"
                                 role="switch" id="set_poster_image" @if ($game->poster_image) checked @endif>
-                            <label for="set_poster_image" class="form-check-label">Immagine</label>
+                            <label for="set_poster_image" class="form-check-label"> Poster image</label>
                         </div>
 
                         <div id="poster_image_input_container">
