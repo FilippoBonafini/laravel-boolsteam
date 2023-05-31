@@ -99,6 +99,8 @@
                                 <label for="online_false">False</label>
                             </div>
                         </div>
+
+                        {{-- img --}}
                         <div class="form-check form-switch pt-4">
                             <input type="checkbox" name="set_image" value="1" class="form-check-input" role="switch"
                                 id="set_image" @if ($game->image) checked @endif>
@@ -111,6 +113,23 @@
                             <div class="preview pt-3">
                                 <img class="d-block" id="file-image-preview"
                                     @if ($game->image) src="{{ asset('storage/' . $game->image) }}" alt="{{ $game->title }}" @endif>
+                            </div>
+                        </div>
+
+                        {{-- poster img --}}
+
+                        <div class="form-check form-switch pt-4">
+                            <input type="checkbox" name="set_poster_image" value="1" class="form-check-input"
+                                role="switch" id="set_poster_image" @if ($game->poster_image) checked @endif>
+                            <label for="set_poster_image" class="form-check-label"> Poster image</label>
+                        </div>
+
+                        <div id="poster_image_input_container">
+                            <h5 class="mt-3">Poster Immagine:</h5>
+                            <input type="file" class="form-control" id="poster_image" name="poster_image">
+                            <div class="preview pt-3">
+                                <img class="d-block" id="file-poster-image-preview"
+                                    @if ($game->poster_image) src="{{ asset('storage/' . $game->poster_image) }}" alt="{{ $game->title }}" @endif>
                             </div>
                         </div>
                     </div>

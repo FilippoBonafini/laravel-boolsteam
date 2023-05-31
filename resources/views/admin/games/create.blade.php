@@ -92,11 +92,19 @@
 
                         <h5 class="pt-3">Immagine:</h5>
                         <input type="file" class="form-control" id="image" name="image">
+                        
+                        <h5 class="pt-3">Poster Image:</h5>
+                        <input type="file" class="form-control" id="poster_image" name="poster_image">
 
                         {{-- anteprima immagine upload  --}}
-
+                        {{-- image --}}
                         <div class="preview pt-3">
                             <img id="file-image-preview">
+                        </div>
+
+                        {{-- poster image --}}
+                        <div class="preview-poster pt-3">
+                            <img id="file-poster-image-preview">
                         </div>
 
                     </div>
