@@ -122,8 +122,7 @@ class GameController extends Controller
         $platforms = isset($data['platforms']) ? $data['platforms'] : [];
         $game->platforms()->sync($platforms);
 
-        // $game->update($data);
-        $game->save();
+        $game->update($data);
         return redirect()->route('admin.games.index');
     }
 
