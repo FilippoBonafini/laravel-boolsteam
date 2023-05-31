@@ -61,7 +61,7 @@ class GameController extends Controller
         if (isset($data['sconto'])) {
             // Calcola il prezzo scontato e assegna il valore a $prezzoScontato
             $prezzoScontato = floor($data['price'] - ($data['price'] * ($data['sconto'] / 100))) + 0.99;
-            
+
             $newGame->discounted_price = $prezzoScontato;
         } else {
             // Nessuno sconto applicato
@@ -116,9 +116,10 @@ class GameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateGameRequest $request, Game $game)
-
     {
         $data = $request->validated();
+
+        $game->update($data);
 
         // img
         if (empty($data['set_image'])) {
@@ -158,7 +159,7 @@ class GameController extends Controller
         if (isset($data['poster_image'])) {
             $game->poster_image = Storage::put('uploads', $data['poster_image']);
         }
-        $game->update($data);
+        // $game->update($data);
 
         return redirect()->route('admin.games.index');
     }

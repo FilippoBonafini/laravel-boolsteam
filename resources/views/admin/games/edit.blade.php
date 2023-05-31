@@ -74,7 +74,9 @@
                                 value="{{ trim(old('price', $game->price)) }}">
                         </p>
                         <p>
-                            <input type="number" class="form-control" min="0" max="100" step="1" name="sconto" value="{{ trim(old('sconto', $game->sconto)) }}" placeholder="Inserisci lo sconto (opzionale)">
+                            <input type="number" class="form-control" min="0" max="100" step="1"
+                                name="sconto" value="{{ trim(old('sconto', $game->sconto)) }}"
+                                placeholder="Inserisci lo sconto (opzionale)">
                         </p>
                         <div class="form-group">
                             <label for="crossplay">Cross Play</label><br>
@@ -102,7 +104,7 @@
 
                         {{-- img --}}
                         <div class="form-check form-switch pt-4">
-                            <input type="checkbox" name="set_image" value="1" class="form-check-input" role="switch"
+                            <input type="checkbox" name="image" value="1" class="form-check-input" role="switch"
                                 id="set_image" @if ($game->image) checked @endif>
                             <label for="set_image" class="form-check-label">Immagine</label>
                         </div>
@@ -119,7 +121,7 @@
                         {{-- poster img --}}
 
                         <div class="form-check form-switch pt-4">
-                            <input type="checkbox" name="set_poster_image" value="1" class="form-check-input"
+                            <input type="checkbox" name="poster_image" value="1" class="form-check-input"
                                 role="switch" id="set_poster_image" @if ($game->poster_image) checked @endif>
                             <label for="set_poster_image" class="form-check-label"> Poster image</label>
                         </div>
