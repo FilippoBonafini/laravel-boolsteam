@@ -3,7 +3,7 @@ return [
     [
         'title' => 'The Legend of Zelda: Breath of the Wild',
         'genres' => array('Action', 'Adventure'),
-        'release_year' => 2017,
+        'release_date' => '2018-03-17',
         'description' => 'The Legend of Zelda: Breath of the Wild is an exciting action-adventure game set in a vast open world. Explore breathtaking landscapes, solve puzzles, battle enemies, and uncover the secrets of the kingdom of Hyrule. With its immersive gameplay and stunning visuals, this game offers an unforgettable journey for players.',
         'developer' => 'Nintendo',
         'platforms' => array('Nintendo Switch', 'Wii U'),
@@ -16,7 +16,7 @@ return [
     [
         'title' => 'Red Dead Redemption 2',
         'genres' => array('Action', 'Adventure', 'Open-world'),
-        'release_year' => 2018,
+        'release_date' => '2018-03-17',
         'description' => 'Red Dead Redemption 2 takes players on an epic journey through the Wild West. Play as Arthur Morgan, an outlaw on the run, and experience a rich story filled with memorable characters and intense action. From gunfights to horseback riding, hunting, and exploring the vast open world, this game offers a truly immersive and cinematic experience.',
         'developer' => 'Rockstar Games',
         'platforms' => array('PlayStation 4', 'Xbox One', 'PC'),
@@ -29,7 +29,7 @@ return [
     [
         'title' => 'The Witcher 3: Wild Hunt',
         'genres' => array('Action', 'Role-playing'),
-        'release_year' => 2015,
+        'release_date' => '2018-03-17',
         'description' => 'The Witcher 3: Wild Hunt is a critically acclaimed role-playing game set in a dark fantasy world. Step into the shoes of Geralt of Rivia, a monster hunter, and embark on a quest to find your adopted daughter. With its immersive storytelling, complex characters, and dynamic combat system, this game offers a captivating and immersive experience for players.',
         'developer' => 'CD Projekt',
         'platforms' => array('PlayStation 4', 'Xbox One', 'PC', 'Nintendo Switch'),
@@ -42,7 +42,7 @@ return [
     [
         'title' => 'Grand Theft Auto V',
         'genres' => array('Action', 'Open-world'),
-        'release_year' => 2013,
+        'release_date' => '2018-03-17',
         'description' => 'Grand Theft Auto V is an open-world action game set in the sprawling city of Los Santos. Play as three different characters, each with their own unique abilities and stories, and engage in a variety of missions, heists, and activities. With its immersive world, engaging gameplay, and a massive online multiplayer mode, GTA V offers endless hours of entertainment.',
         'developer' => 'Rockstar Games',
         'platforms' => array('PlayStation 4', 'PlayStation 3', 'Xbox One', 'Xbox 360', 'PC'),
@@ -55,7 +55,7 @@ return [
     [
         'title' => 'Minecraft',
         'genres' => array('Sandbox', 'Survival'),
-        'release_year' => 2011,
+        'release_date' => '2018-03-17',
         'description' => 'Minecraft is a sandbox survival game that allows players to build and explore virtual worlds made up of blocks. With its creative mode, players can unleash their imagination and construct anything they can dream of. In survival mode, players must gather resources, craft tools, and fend off enemies. Minecraft offers endless possibilities and has become a global phenomenon.',
         'developer' => 'Mojang Studios',
         'platforms' => array('PC', 'PlayStation 4', 'Xbox One', 'Nintendo Switch', 'Mobile'),
@@ -68,7 +68,7 @@ return [
     [
         'title' => 'Super Mario Odyssey',
         'genres' => array('Platformer', 'Action-adventure'),
-        'release_year' => 2017,
+        'release_date' => '2018-03-17',
         'description' => "Super Mario Odyssey is a charming platformer and action-adventure game featuring everyone's favorite plumber, Mario. Join Mario and his new companion, Cappy, as they travel across various kingdoms in their quest to rescue Princess Peach from Bowser's clutches. With its innovative gameplay mechanics, vibrant worlds, and nostalgic nods to the Mario franchise, this game is a must-play for fans.",
         'developer' => 'Nintendo',
         'platforms' => array('Nintendo Switch'),
