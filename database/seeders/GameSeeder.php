@@ -34,7 +34,7 @@ class GameSeeder extends Seeder
             $newGame->developers_id = $developers->id;
             $newGame->title = $game['title'];
             // $newGame->genres = implode(',', $game['genres']);
-            $newGame->release_year = $game['release_year'];
+            $newGame->release_date = $game['release_date'];
             $newGame->description = $game['description'];
             // $newGame->developer = $game['developer'];
             // $newGame->platforms = implode(',', $game['platforms']);

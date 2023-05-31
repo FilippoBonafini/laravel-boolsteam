@@ -27,7 +27,7 @@ class UpdateGameRequest extends FormRequest
         return [
             'title' => 'required|string',
             // 'genres' => 'required',
-            'release_year' => 'required',
+            'release_date' => 'required',
             'description' => 'nullable',
             // 'developer' => 'required|string',
             // 'platforms' => 'required',
