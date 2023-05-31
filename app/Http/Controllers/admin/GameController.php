@@ -159,8 +159,8 @@ class GameController extends Controller
         if (isset($data['poster_image'])) {
             $game->poster_image = Storage::put('uploads', $data['poster_image']);
         }
-        // $game->update($data);
-
+        //    $game->update($data);
+        $game->save();
         return redirect()->route('admin.games.index');
     }
 
