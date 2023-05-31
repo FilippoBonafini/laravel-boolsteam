@@ -67,7 +67,7 @@ class GameController extends Controller
             // Nessuno sconto applicato
             $newGame->discounted_price = null;
         }
-        dd($prezzoScontato);
+        
         if (isset($data['image'])) {
             $newGame->image = Storage::put('uploads', $data['image']);
         }
