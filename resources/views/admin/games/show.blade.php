@@ -6,7 +6,7 @@
         {{-- TITOLO DEL GIOCO  --}}
         <h1>{{ $game->title }}</h1>
         {{-- INCLUDIAMO I BOTTONI  --}}
-        @include('partials.editZone')
+        @include('admin.games.partials.editZone')
     </div>
     {{-- /HEADER  --}}
 

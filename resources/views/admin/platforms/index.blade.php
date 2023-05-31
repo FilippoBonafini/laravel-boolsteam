@@ -3,7 +3,7 @@
 @section('content')
     {{-- BOTTONE PER AGGIUNGERE GIOCO ALL'ELNCO  --}}
     <div class=" m-a text-light d-flex justify-content-end">
-        <a href="{{ route('admin.games.create') }}">
+        <a href="{{ route('admin.platforms.create') }}">
             {{-- INCLUDIAMO L'ICONA DEL PIU' --}}
 
             @include('partials.svg.add')
@@ -15,8 +15,8 @@
         {{-- HEADER DELLA TABELLA  --}}
         <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Price</th>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
                 {{-- <th scope="col">Company</th> --}}
                 <th scope="col"></th>
             </tr>
@@ -31,15 +31,15 @@
                 </div>
             @endif
             {{-- RIPETIAMO QUESTA OPERAZIONE PER OGNI RECORD  --}}
-            @foreach ($games as $game)
+            @foreach ($platforms as $platform)
                 <tr>
-                    <td class=" align-middle">{{ $game->title }}</td>
-                    <td class=" align-middle">{{ $game->price }}</td>
+                    <td class=" align-middle">{{ $platform->id }}</td>
+                    <td class=" align-middle">{{ $platform->name }}</td>
                     {{-- <td class="align-middle">{{ $game->developer }}</td> --}}
                     <td class="align-middle d-flex justify-content-end align-items-center gap-3">
                         {{-- INCLUDIAMO I BOTTONI  --}}
-                        @include('admin.games.partials.editZone')
-                        <a href="{{ route('admin.games.show', $game->id) }}">
+                        @include('admin.platforms.partials.editZone')
+                        <a href="{{ route('admin.platforms.show', $platform->id) }}">
                             @include('partials.svg.show')
                         </a>
                     </td>
