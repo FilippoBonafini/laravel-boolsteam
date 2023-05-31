@@ -73,7 +73,9 @@
                             <input type="number" class="form-control" name="price"
                                 value="{{ trim(old('price', $game->price)) }}">
                         </p>
-
+                        <p>
+                            <input type="number" class="form-control" min="0" max="100" step="1" name="sconto" value="{{ trim(old('sconto', $game->sconto)) }}" placeholder="Inserisci lo sconto (opzionale)">
+                        </p>
                         <div class="form-group">
                             <label for="crossplay">Cross Play</label><br>
                             <div class="d-flex">

@@ -28,6 +28,8 @@ return new class extends Migration
             // $table->string('languages', 100);
             $table->boolean('online')->default(false);
             $table->float('price', 6, 2);
+            $table->integer('sconto')->nullable();
+            $table->float('discounted_price')->nullable();
             $table->string('cover')->nullable();
             $table->timestamps();
         });
