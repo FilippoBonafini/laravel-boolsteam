@@ -134,6 +134,14 @@
                                     @if ($game->poster_image) src="{{ asset('storage/' . $game->poster_image) }}" alt="{{ $game->title }}" @endif>
                             </div>
                         </div>
+                        <h5 class="pt-3">Scegli Categorie: </h5>
+                        <div class="btn-group d-flex flex-wrap my-2" role="group">
+
+                            @foreach ($genres as $genre)
+                                <input type="checkbox" class="btn-check my-2" id="{{$genre->id}}" autocomplete="off" name="genre[]" value="{{$genre->id}}" {{ in_array($genre->id, old('genre', [])) ? 'checked' : '' }}>
+                                <label class="btn btn-outline-primary" for="{{$genre->id}}">{{ $genre->name }}</label>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

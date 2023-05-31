@@ -27,6 +27,7 @@ return new class extends Migration
             $table->boolean('crossplay')->default(false);
             // $table->string('languages', 100);
             $table->boolean('online')->default(false);
+            $table->boolean('free_to_play')->default(false);
             $table->float('price', 6, 2);
             $table->integer('sconto')->nullable();
             $table->float('discounted_price')->nullable();
