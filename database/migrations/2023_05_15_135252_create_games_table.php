@@ -31,7 +31,6 @@ return new class extends Migration
             $table->integer('sconto')->nullable();
             $table->float('discounted_price')->nullable();
             $table->string('image')->nullable();
-            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }
