@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
     public function index() {
-        $games = Game::with(['genres', 'developer'])->get();
+        $games = Game::with(['genres', 'developer', 'platforms'])->get();
         return response()->json([
             'succes' => true,
             'results' => $games
