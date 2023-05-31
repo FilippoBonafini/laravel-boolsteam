@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Platform;
 use App\Http\Requests\StorePlatformRequest;
 use App\Http\Requests\UpdatePlatformRequest;
+use Illuminate\Support\Str;
 
 class PlatformController extends Controller
 {
@@ -26,7 +27,7 @@ class PlatformController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.platforms.create');
     }
 
     /**
@@ -37,7 +38,16 @@ class PlatformController extends Controller
      */
     public function store(StorePlatformRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $platform = new Platform();
+        $platform->fill($data);
+
+        $platform->slug =  Str::slug($data['name']);
+
+        $platform->save();
+
+        return redirect()->route('admin.platforms.index');
     }
 
     /**
@@ -59,7 +69,7 @@ class PlatformController extends Controller
      */
     public function edit(Platform $platform)
     {
-        //
+        return view('admin.platforms.edit', compact('platform'));
     }
 
     /**
@@ -71,7 +81,11 @@ class PlatformController extends Controller
      */
     public function update(UpdatePlatformRequest $request, Platform $platform)
     {
-        //
+        $data = $request->validated();
+        $platform->slug =  Str::slug($data['name']);
+        $platform->update($data);
+
+        return redirect()->route('admin.platforms.index', $platform->id);
     }
 
     /**
@@ -84,6 +98,6 @@ class PlatformController extends Controller
     {
         $platform->delete();
 
-        return redirect()->route('admin.platforms.index')->with('message', "Platform cancellata con successo");
+        return redirect()->route('admin.platforms.index');
     }
 }

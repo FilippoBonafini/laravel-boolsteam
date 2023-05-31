@@ -33,8 +33,8 @@
             {{-- RIPETIAMO QUESTA OPERAZIONE PER OGNI RECORD  --}}
             @foreach ($platforms as $platform)
                 <tr>
-                    <td class=" align-middle">{{ $platform->name }}</td>
                     <td class=" align-middle">{{ $platform->id }}</td>
+                    <td class=" align-middle">{{ $platform->name }}</td>
                     {{-- <td class="align-middle">{{ $game->developer }}</td> --}}
                     <td class="align-middle d-flex justify-content-end align-items-center gap-3">
                         {{-- INCLUDIAMO I BOTTONI  --}}
