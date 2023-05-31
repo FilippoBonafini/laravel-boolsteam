@@ -12,9 +12,15 @@
 
     {{-- CORPO DEL DETTAGLIO  --}}
     <div class="row">
-        <div class="col-auto">
+        {{-- <div class="col-auto">
             <img class="my-img" src="{{ $game->cover }}" alt="">
-        </div>
+        </div> --}}
+        @if ($game->image)
+            <div class="preview">
+                <img id="file-image-preview" class="pt-3 d-block" src="{{ asset('storage/' . $game->image) }}"
+                    alt="{{ $game->title }}">
+            </div>
+        @endif
         <div class="col">
             <h3>Description</h3>
             <p>{{ $game->description }}</p>

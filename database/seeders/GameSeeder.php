@@ -20,11 +20,11 @@ class GameSeeder extends Seeder
     {
         // PRENDIAMO IL FILE 'games.php'
         $games = config('games');
-        
+
         Schema::disableForeignKeyConstraints();
         Game::truncate();
         Schema::enableForeignKeyConstraints();
-        
+
         // RIPETIAMO QUESTA OPERAZIONE PER OGNI CAMPO DELL'ARRAY CONTENUTO NEL FILE 
         foreach ($games as $game) {
             // CREIAMO UN NUOVO RECORD PRENDENDO LE INFORMAZIONI DEL FILE 

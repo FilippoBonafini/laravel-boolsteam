@@ -25,6 +25,11 @@
 
         {{-- CORPO DELLA TABELLA  --}}
         <tbody>
+            @if (session('message'))
+                <div class="alert alert-info mb-4" role="alert">
+                    {{ session('message') }}
+                </div>
+            @endif
             {{-- RIPETIAMO QUESTA OPERAZIONE PER OGNI RECORD  --}}
             @foreach ($games as $game)
                 <tr>

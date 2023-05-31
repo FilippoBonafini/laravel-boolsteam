@@ -10,10 +10,15 @@ class Game extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['slug'];
+
     public function Developer()
     {
         return $this->belongsTo(Developer::class);
     }
 
-    protected $guarded = [];
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'game_genre');
+    }
 }

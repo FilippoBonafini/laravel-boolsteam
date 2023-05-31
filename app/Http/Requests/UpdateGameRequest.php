@@ -34,8 +34,10 @@ class UpdateGameRequest extends FormRequest
             "crossplay" => "required|boolean",
             // "languages" => "required",
             "online" => "required|boolean",
-            "price" => "required|numeric",
-            "cover" => "required|url"
+            // "price" => "required|numeric",
+            // "cover" => "required|url"
+            'set_image' => 'boolean',
+            'image' => 'nullable|image|max:2048',
         ];
     }
 }

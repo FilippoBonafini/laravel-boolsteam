@@ -14,7 +14,8 @@
     @endif
     {{-- errori --}}
 
-    <form action="{{ route('admin.games.update', $game->id) }}" method="POST" class="container" id="save-form">
+    <form action="{{ route('admin.games.update', $game->id) }}" method="POST" class="container" id="save-form"
+        enctype="multipart/form-data">
         {{-- token --}}
         @csrf
         {{-- metodo put patch --}}
@@ -61,11 +62,11 @@
                             <input type="text" class="form-control" name="languages"
                                 value="{{ trim(old('languages', $game->languages)) }}">
                         </p> --}}
-                        <h5>Image Link:</h5>
+                        {{-- <h5>Image Link:</h5>
                         <p>
                             <input type="text" class="form-control" name="cover"
                                 value="{{ trim(old('cover', $game->cover)) }}">
-                        </p>
+                        </p> --}}
 
                         <h5>Price</h5>
                         <p>
@@ -94,6 +95,20 @@
                                 <input type="radio" id="online_false" name="online" value='0'
                                     @if (old('online') === '0') checked @endif>
                                 <label for="online_false">False</label>
+                            </div>
+                        </div>
+                        <div class="form-check form-switch pt-4">
+                            <input type="checkbox" name="set_image" value="1" class="form-check-input" role="switch"
+                                id="set_image" @if ($game->image) checked @endif>
+                            <label for="set_image" class="form-check-label">Immagine</label>
+                        </div>
+
+                        <div id="image_input_container">
+                            <h5 class="mt-3">Immagine:</h5>
+                            <input type="file" class="form-control" id="image" name="image">
+                            <div class="preview pt-3">
+                                <img class="d-block" id="file-image-preview"
+                                    @if ($game->image) src="{{ asset('storage/' . $game->image) }}" alt="{{ $game->title }}" @endif>
                             </div>
                         </div>
                     </div>
