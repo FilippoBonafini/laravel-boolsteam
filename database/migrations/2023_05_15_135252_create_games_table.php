@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             // $table->string('genres');
-            $table->integer('release_year');
+            $table->date('release_date');
             $table->text('description');
             // $table->string('developer', 100);
             // $table->string('platforms');
@@ -28,7 +28,7 @@ return new class extends Migration
             // $table->string('languages', 100);
             $table->boolean('online')->default(false);
             $table->float('price', 6, 2);
-            $table->string('image')->nullable();
+            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }
