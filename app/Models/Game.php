@@ -12,6 +12,11 @@ class Game extends Model
 
     protected $guarded = ['slug'];
 
+    public function Developer()
+    {
+        return $this->belongsTo(Developer::class);
+    }
+
     public function genres()
     {
         return $this->belongsToMany(Genre::class, 'game_genre');
