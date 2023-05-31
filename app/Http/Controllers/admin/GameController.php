@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
 use App\Models\Game;
+use App\Models\Platform;
 use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
@@ -20,8 +21,9 @@ class GameController extends Controller
         // ORDINIAMO I GIOCHI IN BASE AL PREZZO
         $games = Game::orderBy('price', 'DESC')
             ->get();
+        $platforms = Platform::all();
         //RESTITUIAMO LA VIEW 'games/index'
-        return view('admin.games.index', compact('games'));
+        return view('admin.games.index', compact('games', 'platforms'));
     }
 
     /**
@@ -31,7 +33,8 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('admin.games.create');
+        $platforms = Platform::all();
+        return view('admin.games.create', compact('platforms'));
     }
 
     /**
@@ -64,6 +67,10 @@ class GameController extends Controller
         }
         //salvataggio in tabella
         $newGame->save();
+
+        if (isset($data['platforms'])) {
+            $newGame->tags()->sync($data['platforms']);
+        }
         return to_route('admin.games.index');
     }
 
@@ -86,6 +93,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
+        $platforms = Platform::all();
         return view('admin.games.edit', compact('game'));
     }
 
@@ -117,6 +125,8 @@ class GameController extends Controller
                 $game->image = Storage::put('uploads', $data['image']);
             }
         }
+        $platforms = isset($data['platforms']) ? $data['platforms'] : [];
+        $game->platforms()->sync($platforms);
 
         // poster img
         // if (empty($data['set_image'])) {
@@ -137,9 +147,8 @@ class GameController extends Controller
         if (isset($data['poster_image'])) {
             $game->poster_image = Storage::put('uploads', $data['poster_image']);
         }
+        $game->update($data);
 
-        // $game->update($data);
-        $game->save();
         return redirect()->route('admin.games.index');
     }
 

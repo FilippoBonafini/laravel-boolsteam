@@ -42,10 +42,10 @@
                         <p>
                             <textarea style="resize: none;" rows="5" class="form-control" id="description" name="genres">{{ trim(old('genres', $game->genres)) }}</textarea>
                         </p> --}}
-                        <h5>Release year:</h5>
+                        <h5>Release date:</h5>
                         <p>
-                            <input type="number" class="form-control" name="release_year"
-                                value="{{ trim(old('release_year', $game->release_year)) }}">
+                            <input type="date" class="form-control" name="release_date"
+                                value="{{ trim(old('release_date', $game->release_date)) }}">
                         </p>
                         {{-- <h5>Developer:</h5>
                         <p>

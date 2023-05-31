@@ -48,7 +48,7 @@
     </div>
     <div class="row mt-3">
         <h4>Release:</h4>
-        <span>{{ $game->release_year }}</span>
+        <span>{{ $game->release_date }}</span>
     </div>
     {{-- /INFORMAZIONI AGGIUNTIVE ("FOOTER") --}}
 @endsection
