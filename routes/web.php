@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\admin\GameController;
-use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\admin\PlatformController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
