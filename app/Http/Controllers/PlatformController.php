@@ -82,6 +82,8 @@ class PlatformController extends Controller
      */
     public function destroy(Platform $platform)
     {
-        //
+        $platform->delete();
+
+        return redirect()->route('admin.platforms.index')->with('message', "Platform cancellata con successo");
     }
 }

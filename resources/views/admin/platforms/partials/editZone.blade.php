@@ -1,6 +1,6 @@
 <div class="d-flex gap-2 align-items-center">
     {{-- BOTTONE DI CANCELLAZIONE DEL RECORD  --}}
-    <form action="{{ route('admin.platforms.destroy', $game->id) }}" method="POST">
+    <form action="{{ route('admin.platforms.destroy', $platform->id) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger btn-sm">
@@ -11,7 +11,7 @@
     {{-- /BOTTONE DI CANCELLAZIONE DEL RECORD  --}}
 
     {{-- BOTTONE DI MODIFICA DEL RECORD  --}}
-    <a href="{{ route('admin.games.edit', $game->id)}}" class="btn btn-warning btn-sm d-inline-block">
+    <a href="{{ route('admin.games.edit', $platform->id)}}" class="btn btn-warning btn-sm d-inline-block">
         {{-- INCLUDIAMO L'ICONA DELLA MATITA  --}}
         @include('partials.svg.edit')
     </a>
